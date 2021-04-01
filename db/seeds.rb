@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Reader.create([{ username: 'DeniseReads', email: 'denisereadsexample@gmail.com', password: 'password' }, {username: 'sallyreads', email: 'sallyreadsexample@gmail.com', password: 'password'  }, { username: 'CharlieReads', email: 'charliereadsexample@gmail.com', password: 'password'  }])
 
-Goal.create([{reader_id: 1, description: "I want to learn more about gardening", completion_date: 2021-9-25}, {reader_id: 2, description: "I want to learn start my own business", completion_date: 2021-6-25}, {reader_id: 3, description: "I want to be more romantic towards my spouse", completion_date: 2021-10-25}])
+Goal.create([{reader_id: 1, description: "I want to learn more about gardening", completion_date: Date.new(2021, 9, 25)}, {reader_id: 2, description: "I want to learn start my own business", completion_date: Date.new(2021, 7, 25)}, {reader_id: 3, description: "I want to be more romantic towards my spouse", completion_date: Date.new(2021, 4, 25)}])
 
 
 Plot.create([{description: "Get all of your gardeninghacks here!", goal_id: 1, book_id: 1}, {description: "Where business minded people learn the keys to success", goal_id: 2, book_id: 2}, {description: "Modern day romeo and juliet", goal_id: 3, book_id: 3}])
