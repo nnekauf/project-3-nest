@@ -1,7 +1,7 @@
 <h1>Show Page for Goal</h1>
 
 <p>Description: <%=@goal.description%></p>
-<p>Completion Date: <%=@goal.completion_date%></p>
+<p>Completion Date: <%=@goal.completion_date.strftime("%B %d, %Y")%></p>
 <%=link_to "Edit",  edit_goal_path(@goal)%>
 
 
