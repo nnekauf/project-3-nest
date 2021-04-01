@@ -41,3 +41,20 @@ Project Notes:
             Book
                 title
                 author
+
+        Validations
+            Reader
+                username: validates_uniqueness_of, validates_presence_of 
+                email: validates_uniqueness_of, validates_presence_of 
+                passsword:  has_secure_password
+            Goal
+                description: validates_presence_of should be at least 10 letters
+                completion_date: validates_presence_of
+                reader_id
+            Plot
+                description validates_presence_of
+                goal_id
+                book_id
+            Book
+                title validates_presence_of
+                author validates_presence_of
