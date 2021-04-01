@@ -6,3 +6,4 @@ class Goal < ApplicationRecord
     validates :description, length: { minimum: 10 }
     validates_presence_of :completion_date
 end
+
