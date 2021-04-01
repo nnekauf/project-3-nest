@@ -63,4 +63,5 @@ Project Notes:
             1. Set up Goals routes
             2. Set up users
             3. Set up books
-            
+            4. set up plot
+            5. make book and plot user submittable at first, if more time, try to integrate api
