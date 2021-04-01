@@ -1,2 +1,4 @@
 class Plot < ApplicationRecord
+    belongs_to :goal # a plot achieves one main goal
+    belongs_to :book  # a plot must belong to the book it is about
 end
