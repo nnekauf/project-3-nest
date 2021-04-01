@@ -58,3 +58,9 @@ Project Notes:
             Book
                 title validates_presence_of
                 author validates_presence_of
+
+        Things to do
+            1. Set up Goals routes
+            2. Set up users
+            3. Set up books
+            
