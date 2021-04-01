@@ -1,0 +1,18 @@
+<h1>Show Page</h1>
+
+<p><%=@goal.description%></p>
+<p><%=@goal.completion_date%></p>
+<%=link_to "Edit",  edit_goal_path(@goal)%>
+
+
+<h3>Form_for</h3>
+<%=form_for(@goal, method: :delete) do |f|%>
+  <%=f.submit "Delete"%>
+<%end%>
+<h3>button_to</h3>
+<%=button_to("Delete", @goal, method: :delete, data: { confirm: "Really?" }) %>
+
+
+<h3>link_to</h3>
+
+<%=link_to("Delete", @goal, method: :delete, data: { confirm: "Really?" }) %>
