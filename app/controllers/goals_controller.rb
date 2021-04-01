@@ -12,7 +12,7 @@ class GoalsController < ApplicationController
       end
     
       def create
-        item = Goal.create(goal_params)
+        goal = Goal.create(goal_params)
         redirect_to goal_path(goal)
       end
     
@@ -21,15 +21,15 @@ class GoalsController < ApplicationController
       end
     
       def update
-        item = Goal.find_by(id: params[:id])
-        item.update(goal_params)
+        goal = Goal.find_by(id: params[:id])
+        goal.update(goal_params)
         redirect_to(goal_path(goal))
       end
     
     
       def destroy
-        item = Goal.find_by(id: params[:id])
-        item.delete
+        goal = Goal.find_by(id: params[:id])
+        goal.delete
         redirect_to goals_path
       end
     
