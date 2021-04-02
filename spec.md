@@ -16,8 +16,9 @@ Specs:
     - Each model has validations.
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 - [x] Include signup (how e.g. Devise)
-    Reader controller handles signup
-- [ ] Include login (how e.g. Devise)
+    - Reader controller handles signup
+- [x] Include login (how e.g. Devise)
+    - Sessions controller handles log in
 - [ ] Include logout (how e.g. Devise)
 - [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
 - [ ] Include nested resource show or index (URL e.g. users/2/recipes)
