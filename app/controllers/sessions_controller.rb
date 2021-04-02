@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+# before_save :send_email  #this can be used to handle sign ups via fb
     def new
 
     end
@@ -37,7 +37,11 @@ class SessionsController < ApplicationController
         redirect_to '/signup'
     end
 
-    
+    private
+
+    def fb_auth
+        self.request.env['omniauth.auth']
+    end
     
     
 end
