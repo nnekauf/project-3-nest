@@ -4,11 +4,11 @@
 <% @errors && @errors.each do |e| %>
   <li><%=e%></li>
 <%end%>
-<%= form_tag login_path do %>
-<%=label_tag "Email"%>
-<%=email_field_tag :email%>
-<%=label_tag "Password"%>
-<%=password_field_tag :password %>
+<%= form_for :reader do |f| %>
+<%=f.label "Email"%>
+<%=f.email_field :email%>
+<%=f.label "Password"%>
+<%=f.password_field :password %>
 
-<%=submit_tag "Log In"%>
+<%=f.submit "Log In"%>
 <%end%>
