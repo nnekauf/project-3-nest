@@ -66,3 +66,4 @@ Project Notes:
             4. set up plot
             5. make book and plot user submittable at first, if more time, try to integrate api
 Rails resources https://docs.google.com/document/d/1BeCftRHAaUS4Qn73dH-kHvbCbWKNEbnMLhMUyFjYlgo/edit
+add .env.example file
