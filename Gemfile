@@ -21,7 +21,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'dotenv-rails'
-gem 'omniauth'
+gem 'omniauth', '~> 1.9.1'
 gem 'omniauth-facebook'
 gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
