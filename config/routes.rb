@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :readers, except: [:new, :create] do #readers have goals
     resources :goals
+    resources :books
   end
 
   resources :goals do #goals have many plots associated with them
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :goals
-  # resources :books
+  resources :books
   # resources :plots
   get '/signup', to: "readers#new", as: "signup"
   post '/signup', to: "readers#create"
