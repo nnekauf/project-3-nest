@@ -9,9 +9,13 @@ class SessionsController < ApplicationController
         if @reader && @reader.authenticate(params[:password])
             session[:reader_id] = @reader.id
             redirect_to reader_books_path(@reader)
-        else
+        elsif @reader
+            @errors = ["Invalid Password"]
             render :new
-        end
+          else
+            @errors = ["Invalid Username"]
+            render :new
+          end
     end
 
     def destroy
