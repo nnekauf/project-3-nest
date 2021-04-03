@@ -18,6 +18,16 @@ class BooksController < ApplicationController
     end
 
     def create
+        @book = Book.new(book_params)
+        @book.goals.each {|m| m.reader = current_user}
+        
+        if @book.save
+            flash[:message] = "Successfully created!"
+            redirect_to book_path(@book)
+        else
+          @goals = @book.goals.select{|m| m.user_id == current_user.id}
+          render :new
+        end
 
     end
 
