@@ -1,9 +1,17 @@
-<h3>Form_for</h3>
+<%=render(partial: "application/errors", locals: {errors: @goal.errors.full_messages})%>
 
-<%=form_for(@goal) do |f|%>
+
+  <%if @book%>
+    <h3><%=@book.name%></h3>
+  <%end%>
+<%= form_for(@goal, url: form_url_helper(@book)) do |f|%>
   <%=f.label("Goal Description:") %>
   <%=f.text_area(:description) %>
   <%=f.label("Goal Completion Date:") %>
   <%=f.text_field(:completion_date) %>
-  <%=f.submit "Submit"%>
+  <%if !@book%>
+    <%=f.label "book"%>
+    <%=f.collection_select(:book_id, @books, :id, :name) %>
+  <%end%>
+  <%=f.submit("Save")%>
 <%end%>

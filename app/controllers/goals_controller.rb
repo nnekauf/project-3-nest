@@ -12,8 +12,28 @@ class GoalsController < ApplicationController
       end
     
       def create
-        goal = Goal.create(goal_params)
-        redirect_to goal_path(goal)
+        @goal = Goal.create(goal_params)
+        @goal.reader = current_user
+        if params[:book_id]
+          @goal.book_id = params[:book_id]
+        end
+        if @goal.save
+          flash[:message] = "Successfully created!"
+          redirect_to books_path
+        else
+            @books = Book.all
+           render :new
+        end
+        # if @goal.save
+        #     redirect_to book_path(@book)
+        # else
+        #   # redirect_to new_book_path
+        #   @errors = @book.errors.full_messages
+        #   render :new
+        # end
+
+        # goal = Goal.create(goal_params)
+        # redirect_to goal_path(goal)
       end
     
       def edit
