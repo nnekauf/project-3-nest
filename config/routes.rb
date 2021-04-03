@@ -1,5 +1,6 @@
 
   Rails.application.routes.draw do
+
     resources :readers, except: [:new, :create] do #readers have goals
       resources :goals
       resources :books
@@ -14,6 +15,7 @@
       resources :goals
     end
     # resources :plots
+    get '/home', to: "readers#home"
     get '/signup', to: "readers#new", as: "signup"
     post '/signup', to: "readers#create"
     get '/login', to: "sessions#new", as: "login"

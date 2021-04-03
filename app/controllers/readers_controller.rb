@@ -5,6 +5,10 @@ class ReadersController < ApplicationController
     def index
 
     end
+
+    def home
+
+    end
     
     def new
         @reader = Reader.new
