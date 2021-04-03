@@ -5,4 +5,9 @@ class Book < ApplicationRecord
 
     validates_presence_of :title 
     validates_presence_of :author 
+    validate :is_title_case
+    before_validation :make_title_case
+
+
+
 end
