@@ -6,8 +6,10 @@ class GoalsController < ApplicationController
     def index
       if params[:completion_date]
         @goals = Goal.completion_date_search(params[:completion_date])
+      else 
+        @goals = current_user.goals
       end
-        # @goals = Goal.all
+    
     end
     
       def show
