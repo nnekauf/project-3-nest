@@ -2,6 +2,10 @@ class ReadersController < ApplicationController
 
     before_action(:require_login, except: [:new, :create])
 
+    def index
+
+    end
+    
     def new
         @reader = Reader.new
     end
