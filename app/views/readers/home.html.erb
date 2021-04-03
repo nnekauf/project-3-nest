@@ -3,13 +3,14 @@
 <br>
 <h6> 1. show how many goals they have with link to their goal's show page</h6>
 
-<h3> You currently have <%= current_user.goals.count%> goal(s) that you are working towards!</h3>
+<h3> You currently have <%= current_user.goals.count%> <%=link_to "Goal(s)", reader_goals_path(current_user) %> that you are working towards!</h3>
 
 <h6> 2. show how many books they have with link to their book's show page</h6>
 
-<h3> You currently have <%= current_user.books.count%> book(s) on your bookshelf! </h3>
+<h3> You currently have <%= current_user.books.count%> <%=link_to "Book(s)", reader_books_path(current_user) %> on your bookshelf! </h3>
 
 
+  
 
 
 
