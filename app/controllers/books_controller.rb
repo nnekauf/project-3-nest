@@ -16,7 +16,16 @@ class BooksController < ApplicationController
     end
 
     def destroy
-        
+
     end
 
+    private
+
+        def book_params
+
+        end
+
+        def set_book
+
+        end
 end
