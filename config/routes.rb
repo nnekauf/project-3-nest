@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   
 
-  resources :goals
+  resources :goals, only: [:new, :create, :index, :edit, :update]
   resources :books
   # resources :plots
   get '/signup', to: "readers#new", as: "signup"
