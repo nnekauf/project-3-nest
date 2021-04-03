@@ -1,4 +1,8 @@
 class GoalsController < ApplicationController
+    before_action(:require_login)
+    before_action(:show_helper, only: [:edit, :update])
+    before_action(:index_helper, only: :index)
+
     def index
       if params[:completion_date]
         @goals = Goal.completion_date_search(params[:completion_date])
