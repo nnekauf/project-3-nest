@@ -10,6 +10,7 @@ class ReadersController < ApplicationController
         @reader = Reader.new(reader_params)
         if @reader.save
             session[:reader_id] = @reader.id
+            flash[:message] = "Successfully created account!"
             redirect_to reader_goals_path(@reader)
         else
             @errors = @reader.errors.full_messages
