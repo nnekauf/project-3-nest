@@ -9,5 +9,14 @@ class Book < ApplicationRecord
     before_validation :make_title_case
 
 
-
+    def goals_attributes=(attrs)
+        attrs.values.each do |hash|
+          if hash[:id]
+            g = Goal.find_by(id: hash[:id])
+            g.update(hash)
+          else
+            self.goals.build(hash)
+          end
+        end
+    end
 end
