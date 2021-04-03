@@ -1,11 +1,11 @@
 <h3> Home </h3>
 <%= current_user.username %>
 <br>
-<h6> 1. show how many goals they have with link to their goal's show page</h6>
+
 
 <h3> You currently have <%= current_user.goals.count%> <%=link_to "Goal(s)", reader_goals_path(current_user) %> that you are working towards!</h3>
 
-<h6> 2. show how many books they have with link to their book's show page</h6>
+
 
 <h3> You currently have <%= current_user.books.count%> <%=link_to "Book(s)", reader_books_path(current_user) %> on your bookshelf! </h3>
 
@@ -14,8 +14,7 @@
 
 
 
-<h6> 4. link to create a new goal</h6>
 <%=link_to "Create a New Goal", new_goal_path %>
-  
-<h6> 5. link to add a new book to their book shelf</h6>
+  <br>
+
 <%=link_to "Add a New Book to your bookshelf!", new_book_path %>
