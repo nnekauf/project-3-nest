@@ -56,9 +56,12 @@ class GoalsController < ApplicationController
       end
     
       def update
-        goal = Goal.find_by(id: params[:id])
-        goal.update(goal_params)
-        redirect_to(goal_path(goal))
+        if @goal.update(goal_params)
+          redirect_to goals_path
+        else
+            
+          render :edit
+        end
       end
     
     
