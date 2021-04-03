@@ -9,7 +9,7 @@ class ReadersController < ApplicationController
     def home
 
     end
-    
+
     def new
         @reader = Reader.new
     end
@@ -19,7 +19,7 @@ class ReadersController < ApplicationController
         if @reader.save
             session[:reader_id] = @reader.id
             flash[:message] = "Successfully created account!"
-            redirect_to reader_goals_path(@reader)
+            redirect_to redirect_to "/home"
         else
             @errors = @reader.errors.full_messages
             render :new
