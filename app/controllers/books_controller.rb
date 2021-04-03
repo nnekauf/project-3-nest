@@ -1,6 +1,9 @@
 class BooksController < ApplicationController
     def index 
-
+        if params[:reader_id]
+            reader = Reader.find_by(id: params[:reader_id])
+            @books = reader.books
+          end
     end
 
     def show
