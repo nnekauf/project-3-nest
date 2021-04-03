@@ -4,9 +4,10 @@ Rails.application.routes.draw do
     resources :(books, except: [:show, :edit, :update, :destroy, :put])
   end
 
-  resources :goals do #goals have many plots associated with them
-    resources :plots
+  resources (books, :except: [:put, :edit, :patch, :destroy, :update]) do
+    resources :goals, only: [:new, :create]
   end
+  
 
   resources :goals
   resources :books
