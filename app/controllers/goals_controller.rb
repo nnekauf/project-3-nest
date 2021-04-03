@@ -11,7 +11,15 @@ class GoalsController < ApplicationController
       end
     
       def new
-        @goal = Goal.new
+        if params[:book_id]
+          @book = Book.find_by(id: params[:book_id])
+          @goal = @book.goals.build
+          @books = Book.all
+        else
+          @goal = Goal.new
+          @books = Book.all
+        end
+    
       end
     
       def create
