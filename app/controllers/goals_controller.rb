@@ -1,6 +1,9 @@
 class GoalsController < ApplicationController
     def index
-        @goals = Goal.all
+      if params[:completion_date]
+        @goals = Goal.completion_date_search(params[:completion_date])
+      end
+        # @goals = Goal.all
       end
     
       def show
