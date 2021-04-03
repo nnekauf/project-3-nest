@@ -7,7 +7,7 @@ class ReadersController < ApplicationController
     end
 
     def home
-
+       
     end
 
     def new
