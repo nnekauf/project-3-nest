@@ -77,4 +77,8 @@ class GoalsController < ApplicationController
         def goal_params
           params.require(:goal).permit(:description, :completion_date, :book_id)
         end
+
+        def set_goal
+          @goal = Goal.find_by(id: params[:id])
+        end
 end
