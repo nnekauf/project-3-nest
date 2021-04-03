@@ -8,7 +8,7 @@ class GoalsController < ApplicationController
         @goals = Goal.completion_date_search(params[:completion_date])
       end
         # @goals = Goal.all
-      end
+    end
     
       def show
         @goal = Goal.find_by(id: params[:id])
