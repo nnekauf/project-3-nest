@@ -11,7 +11,10 @@ class BooksController < ApplicationController
     end
 
     def new
-
+        @book = Book.new
+        @book.goals.build(reader: current_user)
+        @book.goals.build(reader: current_user)
+        @goals = @book.goals.select{|m| m.reader_id == current_user.id}
     end
 
     def create
