@@ -32,7 +32,9 @@ class BooksController < ApplicationController
     end
 
     def destroy
-
+        @book.delete
+        flash[:message] = "Successfully deleted!"
+        redirect_to books_path
     end
 
     private
