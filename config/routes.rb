@@ -10,7 +10,9 @@
     end
   
     resources :goals
-    resources :books
+    resources :books do
+      resources :goals
+    end
     # resources :plots
     get '/signup', to: "readers#new", as: "signup"
     post '/signup', to: "readers#create"
