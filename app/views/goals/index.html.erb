@@ -1,4 +1,4 @@
-<h1>All Goals</h1>
-<%@goals.each do |goal|%>
-  <li><%=link_to(goal.description, goal_path(goal))%></li>
-<%end%>
+<h1>Goals</h1>
+
+
+<%=render(partial: 'goals', locals: {goals: @goals, index: true})%>
