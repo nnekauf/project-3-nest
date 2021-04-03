@@ -48,7 +48,11 @@ class GoalsController < ApplicationController
       end
     
       def edit
-        @goal = Goal.find_by(id: params[:id])
+        if @goal.reader != current_user
+          flash[:message] = "That is not your goal!"
+          redirect_to '/goals'
+        end
+        # @goal = Goal.find_by(id: params[:id])
       end
     
       def update
