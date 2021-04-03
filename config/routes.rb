@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :readers, except: [:new, :create] do #readers have goals
-    resources :goals
-    resources :books
+    resources :(goals, except: [:show, :edit, :update, :destroy, :put])
+    resources :(books, except: [:show, :edit, :update, :destroy, :put])
   end
 
   resources :goals do #goals have many plots associated with them
