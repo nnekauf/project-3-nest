@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         @reader = Reader.find_by(email: params[:reader][:email])
         if @reader && @reader.authenticate(params[:reader][:password])
             session[:reader_id] = @reader.id
-            redirect_to reader_books_path(@reader)
+            redirect_to "/home"
         elsif @reader
             @errors = ["Invalid Password"]
             render :new
