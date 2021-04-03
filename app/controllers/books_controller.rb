@@ -44,6 +44,6 @@ class BooksController < ApplicationController
         end
 
         def set_book
-
+            @book = Book.find_by(id: params[:id])
         end
 end
