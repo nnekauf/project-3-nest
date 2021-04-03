@@ -1,4 +1,8 @@
 class BooksController < ApplicationController
+    before_action(:show_helper, except: [:index, :new, :create])
+    before_action(:require_login)
+    before_action(:index_helper, only: :index)
+
     def index 
         if params[:reader_id]
             reader = Reader.find_by(id: params[:reader_id])
