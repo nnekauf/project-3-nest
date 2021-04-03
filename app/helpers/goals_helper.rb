@@ -1,7 +1,11 @@
 module GoalsHelper
 
-    def show_book_title(g, index)
-        g.book.title if index
+    def show_books_title(g, index)
+        if index
+            g.books.each do |b|
+                b.title
+            end 
+        end
     end
   
   
