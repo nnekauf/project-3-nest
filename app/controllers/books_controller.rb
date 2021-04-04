@@ -42,7 +42,9 @@ layout 'application'
         # @book = Book.create(book_params)
         @book = Book.find_by(book_params)
         @book.reader = current_user
+        @book.review = params[:book][:review]
         @book.save
+
               flash[:message] = "Successfully created!"
               redirect_to "/home"
             
