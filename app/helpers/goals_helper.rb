@@ -1,16 +1,16 @@
 module GoalsHelper
 
-    def show_books_title(g, index)
+    def show_authors_bio(g, index)
         if index
-            g.books.each do |b|
-                b.title
+            g.authors.each do |b|
+                b.bio
             end 
         end
     end
   
   
-    def form_url_helper(book)
-      book ? book_goals_path(book) : goals_path
+    def form_url_helper(author)
+      author ? author_goals_path(author) : goals_path
     end
   
   end

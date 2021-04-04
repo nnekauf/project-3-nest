@@ -1,4 +1,4 @@
-class BooksController < ApplicationController
+class AuthorController < ApplicationController
     before_action(:show_helper, except: [:index, :new, :create])
     before_action(:require_login)
     before_action(:index_helper, only: :index)
@@ -6,7 +6,7 @@ class BooksController < ApplicationController
     def index 
         if params[:reader_id]
             reader = Reader.find_by(id: params[:reader_id])
-            @books = reader.books
+            @author = reader.author
           end
     end
 
@@ -38,7 +38,7 @@ class BooksController < ApplicationController
     def destroy
         @book.delete
         flash[:message] = "Successfully deleted!"
-        redirect_to books_path
+        redirect_to author_path
     end
 
     private
