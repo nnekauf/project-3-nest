@@ -1,4 +1,4 @@
-class AuthorController < ApplicationController
+class AuthorsController < ApplicationController
     before_action(:show_helper, except: [:index, :new, :create])
     before_action(:require_login)
     before_action(:index_helper, only: :index)
