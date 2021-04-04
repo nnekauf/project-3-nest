@@ -4,10 +4,11 @@ class Book < ApplicationRecord
 
     validates_presence_of :title 
     validates_presence_of :author 
-    
+
     validate :is_title_case
     before_validation :make_title_case
 
+scope(:title_search, ->(title) { self.where("title like ?", "%#{title}%") })
 
     def books_attributes=(attrs)
         attrs.values.each do |hash|
