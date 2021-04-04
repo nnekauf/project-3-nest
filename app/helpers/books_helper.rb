@@ -9,7 +9,7 @@ module BooksHelper
   
   
     def form_url_helper(author)
-      author ? author_goals_path(author) : goals_path
+      author ? author_books_path(author) : books_path
     end
   
 end
