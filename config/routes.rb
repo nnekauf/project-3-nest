@@ -1,20 +1,19 @@
 
   Rails.application.routes.draw do
 
-    resources :readers, except: [:new, :create] do #readers have goals
-      resources :goals
+    resources :readers, except: [:new, :create] do #readers have books
       resources :books
     end
   
-    resources :goals do #goals have many plots associated with them
-      resources :plots
+    resources :authors do 
+      resources :books
     end
   
-    resources :goals
+   
     
     resources :books do
-      resources :goals
-      resources :plots
+      resources :readers
+      resources :authors
     end
     # resources :plots
     get '/home', to: "readers#home"
