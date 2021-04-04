@@ -6,9 +6,9 @@
     <%=f.label("goals:") %>
     <%=f.my_fields_for(:goals, @goals) do |m| %>
       <%=m.label "description"%>
-      <%=m.number_field :description%>
+      <%=m.text_area :description%>
       <%=m.label "completion_date"%>
-      <%=m.date_field :completion_date%>
+      <%=m.text_field :completion_date%>
     <%end%>
     <%=f.submit "Submit"%>
   <%end%>

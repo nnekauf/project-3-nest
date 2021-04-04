@@ -2,7 +2,7 @@
 
 
   <%if @book%>
-    <h3><%=@book.name%></h3>
+    <h3><%=@book.title%></h3>
   <%end%>
 <%= form_for(@goal, url: form_url_helper(@book)) do |f|%>
   <%=f.label("Goal Description:") %>

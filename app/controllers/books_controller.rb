@@ -17,7 +17,7 @@ class BooksController < ApplicationController
     def new
         @book = Book.new
         @book.goals.build(reader: current_user)
-        @book.goals.build(reader: current_user)
+        
         @goals = @book.goals.select{|m| m.reader_id == current_user.id}
     end
 
@@ -29,7 +29,7 @@ class BooksController < ApplicationController
             flash[:message] = "Successfully created!"
             redirect_to book_path(@book)
         else
-          @goals = @book.goals.select{|m| m.user_id == current_user.id}
+          @goals = @book.goals.select{|m| m.reader_id == current_user.id}
           render :new
         end
 
