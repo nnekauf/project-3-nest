@@ -6,11 +6,11 @@ class Goal < ApplicationRecord
     validates :description, length: { minimum: 10 }
     validates_presence_of :completion_date
 
-    # scope(:completion_date_search, ->(completion_date) { self.where("completion_date >= ?", completion_date) })
-    # Goal.where("completion_date like ?", "%2021-01%")
-    def self.completion_date_search(completion_date)
-        Goal.where("completion_date like ?", "%#{completion_date}%")
-      end
+    scope(:completion_date_search, ->(completion_date) { self.where("completion_date like ?", "%#{completion_date}%") })
+  
+    # def self.completion_date_search(completion_date)
+    #     Goal.where("completion_date like ?", "%#{completion_date}%")
+    #   end
 
 end
 
