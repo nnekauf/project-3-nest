@@ -7,9 +7,9 @@ class Goal < ApplicationRecord
     validates_presence_of :completion_date
 
     # scope(:completion_date_search, ->(completion_date) { self.where("completion_date >= ?", completion_date) })
-
+    # Goal.where("completion_date like ?", "%2021-01%")
     def self.completion_date_search(completion_date)
-        where("completion_date like ?", completion_date)
+        Goal.where("completion_date like ?", "%#{completion_date}%")
       end
 
 end

@@ -6,7 +6,7 @@ class GoalsController < ApplicationController
     def index
       if params[:completion_date]
       
-        @goals = Goal.completion_date_search(params[:completion_date])
+        @goals = Goal.completion_date_search(params[:completion_date].to_s)
       else 
         # @goals = current_user.goals
       end
