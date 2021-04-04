@@ -5,7 +5,7 @@
 
 
 <%=f.label "book"%>
-<%=f.collection_select(:author_id, @books, :id, :title) %>
+<%=f.collection_select(:id, @books, :id, :title) %>
 
 <%=f.submit("Save")%>
 <%end%>

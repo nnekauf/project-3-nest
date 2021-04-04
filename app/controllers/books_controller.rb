@@ -38,16 +38,14 @@ class BooksController < ApplicationController
       end
 
       def create
-        
-        @book = Book.create(book_params)
+        # binding.pry
+        # @book = Book.create(book_params)
+        @book = Book.find_by(book_params)
         @book.reader = current_user
-        if @book.save
+        @book.save
               flash[:message] = "Successfully created!"
-              redirect_to books_path
-            else
-                @books = Book.all
-               render :new
-            end
+              redirect_to "/home"
+            
       end
       # def new
       #   if params[:book_id]
