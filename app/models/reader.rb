@@ -1,6 +1,6 @@
 class Reader < ApplicationRecord
-    has_many :goals
-    has_many :books, through: :goals
+    has_many :books
+    has_many :authors, through: :books
     
     has_secure_password
     validates_uniqueness_of :username
