@@ -1,7 +1,7 @@
 class Author < ApplicationRecord
    
-    has_many :books #a goal can be acieved through different scenarios/plots
-    has_many :readers, through: :books #a goal is associated with different books through the plots that the book has
+    has_many :books 
+    has_many :readers, through: :books 
 
     validates :bio, length: { minimum: 10 }
     validates_presence_of :full_name

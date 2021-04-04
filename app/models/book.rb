@@ -1,9 +1,10 @@
 class Book < ApplicationRecord
-    belongs_to :reader # a plot achieves one main book
-    belongs_to :author  #through the books of the book, it can have many users who have books that are in line with the book
+    belongs_to :reader 
+    belongs_to :author  
 
     validates_presence_of :title 
     validates_presence_of :author 
+    
     validate :is_title_case
     before_validation :make_title_case
 
