@@ -3,9 +3,13 @@
 <%= form_with url: books_path, method: :get do |f| %>
   <%=f.text_field :title %>
   <%=f. submit"Search"%>
+<%end%><br>
+
+<%if @reader%>
+<h1><%=@reader.username %>'s page</h1>
 <%end%>
 
-<h1><%=@reader.username%>'s Book(s)!</h1>
+<h1>Books!</h1>
 
 <%@books.each do |book|%>
     <li><%=link_to(book.title, book_path(book))%></li>
