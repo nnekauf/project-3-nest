@@ -4,11 +4,12 @@ class GoalsController < ApplicationController
     before_action(:index_helper, only: :index)
 
     def index
+      goals = current_user.goals
       if params[:completion_date]
-      
-        @goals = Goal.completion_date_search(params[:completion_date].to_s)
+        @goals = goals.completion_date_search(params[:completion_date].to_s)
+        # @goals = Goal.completion_date_search(params[:completion_date].to_s)
       else 
-        # @goals = current_user.goals
+        @goals = current_user.goals
       end
     
     end
