@@ -13,6 +13,7 @@
     resources :goals
     resources :books do
       resources :goals
+      resources :plots
     end
     # resources :plots
     get '/home', to: "readers#home"
