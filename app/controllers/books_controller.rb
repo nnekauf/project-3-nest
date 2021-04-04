@@ -27,7 +27,21 @@ class BooksController < ApplicationController
     
       def new
         @book = Book.new
+        @book.authors.build
         @books = Book.all
+      end
+
+      def create
+        
+        @book = Book.new(params[:book])
+        @book.reader - current_user
+        if @book.save
+              flash[:message] = "Successfully created!"
+              redirect_to books_path
+            else
+                @books = Book.all
+               render :new
+            end
       end
       # def new
       #   if params[:book_id]
@@ -94,7 +108,7 @@ class BooksController < ApplicationController
       private
     
         def book_params
-          params.require(:book).permit(:author, :title, :book_id, author_id, reader_id)
+          params.require(:book).permit(:author, :title, :book_id, author_id, reader_id, :id)
         end
 
         def set_book
