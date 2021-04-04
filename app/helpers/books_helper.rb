@@ -8,8 +8,8 @@ module BooksHelper
     end
   
   
-    # def form_url_helper(author)
-    #   author ? author_books_path(author) : books_path
-    # end
+    def form_url_helper(reader)
+      reader ? reader_books_path(reader) : books_path
+    end
   
 end

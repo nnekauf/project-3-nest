@@ -1,7 +1,7 @@
 
 
 
-<%= form_for(@book) do |f|%>
+<%= form_for(@book, url: form_url_helper(@reader)) do |f|%>
 
 
 <%=f.label "book"%>
