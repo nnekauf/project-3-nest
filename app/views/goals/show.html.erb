@@ -16,6 +16,6 @@ Click on any plot to find the book that it belongs to!</h4>
 
 
 <%@goal.plots.each do |p|%>
-    <%=link_to "#{p.description}", goals_path %>
+    <%=link_to "#{p.description}", "/books/#{p.book_id}"%>
+    
 <%end%> 
-

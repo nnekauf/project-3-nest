@@ -11,6 +11,7 @@
     end
   
     resources :goals
+    
     resources :books do
       resources :goals
       resources :plots
