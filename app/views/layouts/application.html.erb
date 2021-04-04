@@ -12,9 +12,9 @@
 
   <body>
   <%if current_user %>
-  <%=link_to "My Goals", reader_goals_path(current_user) %>
+  
   <%=link_to "My Books", reader_books_path(current_user) %>
-  <%=link_to "New Goal", new_goal_path %>
+  
   <%=link_to "New Book", new_book_path %>
   <%=link_to "All Books", books_path %>
   <%=link_to "All Readers", readers_path %>
