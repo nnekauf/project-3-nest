@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2021_04_01_074951) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
-    t.string "author"
     t.string "storyline"
     t.integer "reader_id"
     t.integer "author_id"
