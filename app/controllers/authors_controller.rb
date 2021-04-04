@@ -4,10 +4,11 @@ class AuthorsController < ApplicationController
     before_action(:index_helper, only: :index)
 
     def index 
-        if params[:reader_id]
-            reader = Reader.find_by(id: params[:reader_id])
-            @author = reader.author
-          end
+        # if params[:reader_id]
+        #     reader = Reader.find_by(id: params[:reader_id])
+        #     @author = reader.author
+        #   end
+        @authors = Author.all
     end
 
     def show
