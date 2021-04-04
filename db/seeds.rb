@@ -11,4 +11,4 @@ Author.create([{bio: "I want to learn more about gardening", full_name: "Misses 
 
 
 
-Book.create([{title: "Gardening 101", author: "Misses Greenthumb", storyline: "amazings story bro", reader_id: 1, author_id: 1}, {title: "Self-Made 101", author: "Johhny Joe", storyline: "amazings story bro", reader_id: 2, author_id: 2}, {title: "Romance 101", author: "Dr. Love", storyline: "amazings story bro", reader_id: 3, author_id: 3}])
+Book.create([{title: "Gardening 101", storyline: "amazings story bro", reader_id: 1, author_id: 1}, {title: "Self-Made 101", storyline: "amazings story bro", reader_id: 2, author_id: 2}, {title: "Romance 101", storyline: "amazings story bro", reader_id: 3, author_id: 3}])
