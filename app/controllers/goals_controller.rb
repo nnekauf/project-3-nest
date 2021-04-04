@@ -16,6 +16,7 @@ class GoalsController < ApplicationController
     
       def show
         @goal = Goal.find_by(id: params[:id])
+        # binding.pry
       end
     
       def new
