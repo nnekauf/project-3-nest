@@ -1,15 +1,15 @@
 class BooksController < ApplicationController
     before_action(:require_login)
-    before_action(:show_helper, only: [:edit, :update])
-    before_action(:index_helper, only: :index)
+    # before_action(:show_helper, only: [:edit, :update])
+    # before_action(:index_helper, only: :index)
 
     def index
-      books = current_user.books
+      
       if params[:title]
         @books = Books.title_search(params[:title].to_s)
         # @books = Book.title_search(params[:title].to_s)
       else 
-        @books = current_user.books
+        @books = Book.all
       end
     
     end
