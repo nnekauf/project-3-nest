@@ -1,14 +1,11 @@
 
 
 
-<%= form_for(@book, url: form_url_helper(@book)) do |f|%>
-<%=f.label("Goal Description:") %>
-<%=f.text_area(:description) %>
-<%=f.label("Goal Completion Date:") %>
-<%=f.text_area(:completion_date) %>
-<%if !@book%>
+<%= form_for(@book) do |f|%>
+
+
 <%=f.label "book"%>
-<%=f.collection_select(:book_ids, @books, :id, :title) %>
-<%end%>
+<%=f.collection_select(:author_id, @books, :id, :title) %>
+
 <%=f.submit("Save")%>
 <%end%>
