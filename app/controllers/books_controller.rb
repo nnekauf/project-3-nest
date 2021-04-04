@@ -19,31 +19,31 @@ class BooksController < ApplicationController
         # binding.pry
       end
     
-      def new
-        if params[:book_id]
-          @book = Book.find_by(id: params[:book_id])
-          @book = @book.Books.build
-          @books = Book.all
-        else
-          @book = Book.new
-          @books = Book.all
-        end
+      # def new
+      #   if params[:book_id]
+      #     @book = Book.find_by(id: params[:book_id])
+      #     @book = @book.Books.build
+      #     @books = Book.all
+      #   else
+      #     @book = Book.new
+      #     @books = Book.all
+      #   end
     
-      end
+      # end
     
-      def create
-        @book = Book.create(Book_params)
-        @book.reader = current_user
-        if params[:book_id]
-          @book.book_id = params[:book_id]
-        end
-        if @book.save
-          flash[:message] = "Successfully created!"
-          redirect_to books_path
-        else
-            @books = Book.all
-           render :new
-        end
+      # def create
+      #   @book = Book.create(Book_params)
+      #   @book.reader = current_user
+      #   if params[:book_id]
+      #     @book.book_id = params[:book_id]
+      #   end
+      #   if @book.save
+      #     flash[:message] = "Successfully created!"
+      #     redirect_to books_path
+      #   else
+      #       @books = Book.all
+      #      render :new
+      #   end
         # if @book.save
         #     redirect_to book_path(@book)
         # else
@@ -54,31 +54,31 @@ class BooksController < ApplicationController
 
         # Book = Book.create(Book_params)
         # redirect_to Book_path(Book)
-      end
+      # end
     
-      def edit
-        if @book.reader != current_user
-          flash[:message] = "That is not your Book!"
-          redirect_to '/Books'
-        end
-        # @book = Book.find_by(id: params[:id])
-      end
+      # def edit
+      #   if @book.reader != current_user
+      #     flash[:message] = "That is not your Book!"
+      #     redirect_to '/Books'
+      #   end
+      #   # @book = Book.find_by(id: params[:id])
+      # end
     
-      def update
-        if @book.update(book_params)
-          redirect_to books_path
-        else
+      # def update
+      #   if @book.update(book_params)
+      #     redirect_to books_path
+      #   else
             
-          render :edit
-        end
-      end
+      #     render :edit
+      #   end
+      # end
     
     
-      def destroy
-        book = Book.find_by(id: params[:id])
-        book.delete
-        redirect_to books_path
-      end
+      # def destroy
+      #   book = Book.find_by(id: params[:id])
+      #   book.delete
+      #   redirect_to books_path
+      # end
     
     
       private
