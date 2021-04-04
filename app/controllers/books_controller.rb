@@ -26,9 +26,15 @@ class BooksController < ApplicationController
       end
     
       def new
-        @book = Book.new
-        @book.authors.build
-        @books = Book.all
+        if params[:reader_id]
+          @reader = Reader.find_by(id: params[:reader_id])
+          @book = @reader.books.build
+        
+          @books = Book.all
+        else
+          flash[:message] = "Only Authors can create new Books!"
+          redirect_to readers_path
+        end
       end
 
       def create
