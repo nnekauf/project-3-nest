@@ -1,0 +1,13 @@
+<h1><%=@author.full_name%></h1>
+
+
+
+<h2>Biography:</h2>
+
+    <h3><%=@author.bio%></h3>
+
+
+<br>
+<%=link_to "All #{@author.full_name}'s Books", author_books_path(@author) %><br><br>
+
+
