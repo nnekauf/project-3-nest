@@ -14,8 +14,8 @@
 Click on any plot to find the book that it belongs to!</h4>
 
 
-<%@goal.plots.each do |p|%>
-    <%=link_to "#{p.description}", plot_path(p) %>
-<%end%>
 
+<%@goal.plots.each do |p|%>
+    <%=link_to "#{p.description}", goals_path %>
+<%end%> 
 
