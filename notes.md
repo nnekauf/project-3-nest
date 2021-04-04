@@ -7,6 +7,9 @@ Project Notes:
 
 
         Things to do
+            - delete files from previous idea
+            - dry up resources routes
+            - add author functionality to create books
             
 Rails resources https://docs.google.com/document/d/1BeCftRHAaUS4Qn73dH-kHvbCbWKNEbnMLhMUyFjYlgo/edit
 add .env.example file
