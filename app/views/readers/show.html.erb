@@ -1,0 +1,4 @@
+<% @reader.books.each do |b| %>
+    <li><%=link_to(b.title, book_path(b))%></li>
+    <%end%>
+    
