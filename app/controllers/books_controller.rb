@@ -8,6 +8,9 @@ class BooksController < ApplicationController
       if params[:title]
         @books = Books.title_search(params[:title].to_s)
         # @books = Book.title_search(params[:title].to_s)
+      elsif params[:reader_id]
+        reader = Reader.find_by(id: params[:reader_id])
+        @books = reader.books
       else 
         @books = Book.all
       end
