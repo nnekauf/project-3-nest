@@ -1,2 +1,5 @@
-<h3> This is the reader's index page </h3>
-<h6> Show the Nest community (other readers on the platform with links to their profile pages)</h6>
+
+<h2> Check out the Nest Community!</h2>
+<% @readers.each do |r| %>
+    <li><%= link_to "#{r.username}", reader_books_path(r)%></li>
+    <%end%>

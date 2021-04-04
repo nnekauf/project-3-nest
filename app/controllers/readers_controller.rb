@@ -3,7 +3,7 @@ class ReadersController < ApplicationController
     before_action(:require_login, except: [:new, :create])
 
     def index
-
+        @readers = Reader.all
     end
 
     def home
