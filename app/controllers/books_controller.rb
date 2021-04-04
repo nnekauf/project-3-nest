@@ -25,6 +25,10 @@ class BooksController < ApplicationController
         # binding.pry
       end
     
+      def new
+        @book = Book.new
+        @books = Book.all
+      end
       # def new
       #   if params[:book_id]
       #     @book = Book.find_by(id: params[:book_id])

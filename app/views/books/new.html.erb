@@ -1,3 +1,14 @@
-<%=render(partial: "application/errors", locals: {errors: @book.errors.full_messages})%>
 
-<%=render('form')%>
+
+
+<%= form_for(@book, url: form_url_helper(@book)) do |f|%>
+<%=f.label("Goal Description:") %>
+<%=f.text_area(:description) %>
+<%=f.label("Goal Completion Date:") %>
+<%=f.text_area(:completion_date) %>
+<%if !@book%>
+<%=f.label "book"%>
+<%=f.collection_select(:book_ids, @books, :id, :title) %>
+<%end%>
+<%=f.submit("Save")%>
+<%end%>
