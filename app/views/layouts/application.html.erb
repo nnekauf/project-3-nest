@@ -15,7 +15,7 @@
   
   <%=link_to "My Books", reader_books_path(current_user) %>
   
-  <%=link_to "New Book", new_book_path %>
+  <%=link_to "Add Book", new_reader_book_path(current_user) %>
   <%=link_to "All Books", books_path %>
   <%=link_to "All Readers", readers_path %>
   <%= button_to "Log Out", logout_path, method: :post %>
