@@ -5,46 +5,46 @@ class BooksController < ApplicationController
 
     def index
       books = current_user.books
-      if params[:completion_date]
-        @books = Books.completion_date_search(params[:completion_date].to_s)
-        # @books = Book.completion_date_search(params[:completion_date].to_s)
+      if params[:title]
+        @books = Books.title_search(params[:title].to_s)
+        # @books = Book.title_search(params[:title].to_s)
       else 
-        @books = current_user.Books
+        @books = current_user.books
       end
     
     end
     
       def show
-        @Book = Book.find_by(id: params[:id])
+        @book = Book.find_by(id: params[:id])
         # binding.pry
       end
     
       def new
         if params[:book_id]
           @book = Book.find_by(id: params[:book_id])
-          @Book = @book.Books.build
+          @book = @book.Books.build
           @books = Book.all
         else
-          @Book = Book.new
+          @book = Book.new
           @books = Book.all
         end
     
       end
     
       def create
-        @Book = Book.create(Book_params)
-        @Book.reader = current_user
+        @book = Book.create(Book_params)
+        @book.reader = current_user
         if params[:book_id]
-          @Book.book_id = params[:book_id]
+          @book.book_id = params[:book_id]
         end
-        if @Book.save
+        if @book.save
           flash[:message] = "Successfully created!"
           redirect_to books_path
         else
             @books = Book.all
            render :new
         end
-        # if @Book.save
+        # if @book.save
         #     redirect_to book_path(@book)
         # else
         #   # redirect_to new_book_path
@@ -57,16 +57,16 @@ class BooksController < ApplicationController
       end
     
       def edit
-        if @Book.reader != current_user
+        if @book.reader != current_user
           flash[:message] = "That is not your Book!"
           redirect_to '/Books'
         end
-        # @Book = Book.find_by(id: params[:id])
+        # @book = Book.find_by(id: params[:id])
       end
     
       def update
-        if @Book.update(Book_params)
-          redirect_to Books_path
+        if @book.update(book_params)
+          redirect_to books_path
         else
             
           render :edit
@@ -75,19 +75,19 @@ class BooksController < ApplicationController
     
     
       def destroy
-        Book = Book.find_by(id: params[:id])
-        Book.delete
-        redirect_to Books_path
+        book = Book.find_by(id: params[:id])
+        book.delete
+        redirect_to books_path
       end
     
     
       private
     
-        def Book_params
-          params.require(:Book).permit(:description, :completion_date, :book_id)
+        def book_params
+          params.require(:book).permit(:author, :title, :book_id, author_id, reader_id)
         end
 
-        def set_Book
-          @Book = Book.find_by(id: params[:id])
+        def set_book
+          @book = Book.find_by(id: params[:id])
         end
 end
