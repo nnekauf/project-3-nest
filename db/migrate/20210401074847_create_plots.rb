@@ -1,10 +1,9 @@
 class CreatePlots < ActiveRecord::Migration[6.1]
   def change
-    create_table :plots do |t|
-      t.text :description
-      t.integer :goal_id
-      t.integer :book_id
-
+    create_table :authors do |t|
+      t.text :bio
+      t.string :full_name
+      
       t.timestamps
     end
   end

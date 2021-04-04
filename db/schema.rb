@@ -12,25 +12,19 @@
 
 ActiveRecord::Schema.define(version: 2021_04_01_074951) do
 
+  create_table "authors", force: :cascade do |t|
+    t.text "bio"
+    t.string "full_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "author"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "goals", force: :cascade do |t|
-    t.string "description"
-    t.string "completion_date"
+    t.string "storyline"
     t.integer "reader_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "plots", force: :cascade do |t|
-    t.text "description"
-    t.integer "goal_id"
-    t.integer "book_id"
+    t.integer "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
