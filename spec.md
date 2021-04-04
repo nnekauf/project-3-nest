@@ -14,7 +14,8 @@ Specs:
     - Book has a title and a storyline. Need to make it user submittable
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
     - Each model has validations.
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+- [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+    - Reader can search through books by title
 - [x] Include signup (how e.g. Devise)
     - Reader controller handles signup
 - [x] Include login (how e.g. Devise)
@@ -25,7 +26,8 @@ Specs:
     - User can sign up via Facebook
 - [ ] Include nested resource show or index (URL e.g. users/2/recipes)
 - [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+- [x] Include form display of validation errors (form URL e.g. /recipes/new)
+    - Validation errors are shown within errors partial
 
 Confirm:
 - [ ] The application is pretty DRY
