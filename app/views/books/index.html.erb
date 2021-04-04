@@ -1,3 +1,10 @@
+<h1>Search By Title</h1>
+
+<%= form_with url: books_path, method: :get do |f| %>
+  <%=f.text_field :title %>
+  <%=f. submit"Search"%>
+<%end%>
+
 <h1> All Books</h1>
 <%@books.each do |book|%>
     <li><%=link_to(book.title, book_path(book))%></li>
