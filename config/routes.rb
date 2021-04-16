@@ -17,7 +17,7 @@
   #     resources :authors
   #   end
   #   # resources :plots
-  #   get '/home', to: "readers#home"
+    # get '/home', to: "readers#home"
     get '/', to: "readers#welcome"
   #   get '/signup', to: "readers#new", as: "signup"
   #   post '/signup', to: "readers#create"
