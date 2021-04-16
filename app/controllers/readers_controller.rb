@@ -1,12 +1,23 @@
 class ReadersController < ApplicationController
+    # before_action(:require_login, except: [:new, :create])
+
     def welcome
        
+    end
+    
+
+    def index
+        @readers = Reader.all
     end
 
     def new
         @reader = Reader.new
     end
 
+    def show
+        @reader = Reader.find_by(id: params[:id])
+    end
+    
     def create
         @reader = Reader.new(reader_params)
         if @reader.save
@@ -18,7 +29,7 @@ class ReadersController < ApplicationController
             render :new
         end
     end
-    
+
     private
 
     def reader_params
