@@ -31,7 +31,10 @@ class ReviewsController < ApplicationController
     end
 
     def edit
-
+        if @review.reader != current_user
+            flash[:message] = "That is not your review!"
+            redirect_to '/reviews'
+        end
     end
 
     def update
