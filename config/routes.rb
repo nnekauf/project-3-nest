@@ -13,7 +13,7 @@
 
     get '/home', to: "readers#home"
 
-    resources :readers do
+    resources :readers , except: [:show, :new, :create, :destroy, :patch, :put] do
       resources :books
       resources :reviews
     end
