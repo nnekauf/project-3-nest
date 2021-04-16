@@ -1,0 +1,13 @@
+<h1><%=@book.title%></h1>
+<h1><%=@book.author%></h1>
+
+
+
+<h2>Reviews:</h2>
+<% @book.reviews.each do |r| %>
+    <li> <%= r.reader.username %> <%= link_to "says", review_path(@book.r_id) %><br><br></li>
+    <%end%>
+    
+
+
+
