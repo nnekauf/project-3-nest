@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    helper_method(:current_user, :logged_in?, :redirect_if_not_reader(obj))
+    helper_method(:current_user, :logged_in?, :redirect_if_not_reader)
 
     def current_user
         @current_user = Reader.find_by(id: session[:reader_id])
@@ -33,9 +33,9 @@ class ApplicationController < ActionController::Base
     end
   
     def redirect_if_not_reader(obj)
-        if !check_owner(obj)
+        if !check_reader(obj)
           flash[:message] = "Sorry, this is not your review!"
-          redirect "/home"
+          redirect_to "/home"
         end
     end
 
