@@ -34,7 +34,11 @@ class ApplicationController < ActionController::Base
   
     def redirect_if_not_reader(reader)
         if !check_reader(reader)
+            if params.to_s.include?("reviews")
           flash[:message] = "Sorry, this is not your review!"
+            elsif params..to_s.include?("reviews")
+                flash[:message] = "Sorry, these are not your books!"
+            end
           redirect_to "/home"
         end
     end
