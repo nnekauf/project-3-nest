@@ -12,9 +12,10 @@
     get "/auth/facebook/callback", to: "sessions#create_with_fb"
 
     get '/home', to: "readers#home"
-    
+
     resources :readers do
       resources :books
+      resources :reviews
     end
 
     resources :books do 
