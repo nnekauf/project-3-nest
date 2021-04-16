@@ -13,16 +13,16 @@
 
     get '/home', to: "readers#home"
 
-    resources :readers , except: [:show, :new, :create, :destroy, :patch, :put] do
-      resources :books
-      resources :reviews
+    resources :readers, except: [:show, :index, :new, :create, :destroy, :patch, :put, :edit]  do
+      resources :books, only: [:index] 
+      resources :reviews, only: [:index, :new, :create, :patch, :put, :edit] 
     end
 
-    resources :books do 
-      resources :reviews
+    resources :books, only: [:index, :show] do 
+      resources :reviews, only: [:index, :new, :create] 
     end
 
-    resources :reviews
+    resources :reviews, only: [:show]
   
     
   
