@@ -1,0 +1,4 @@
+<% @reader.reviews.each do |r| %>
+    <li><%=link_to(r.title, review_path(r))%></li>
+    <%end%>
+    
