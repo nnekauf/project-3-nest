@@ -47,8 +47,10 @@ class ReviewsController < ApplicationController
     end
 
     def update
+        
+        @review = Review.find_by(id: params[:id])
         if @review.update(review_params)
-            redirect_to reviews_path
+            redirect_to review_path(@review.id)
         else
             render :edit
         end
