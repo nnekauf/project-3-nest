@@ -3,7 +3,7 @@
 
 <h3>Editing review for <%=@review.book.title%></h3>
 
-<%= form_for(@review) do |f|%>
+<%= form_for(@review )do |f|%>
   <%=f.label "Edit your Review here!"%>
   <%=f.text_area :text%>
   

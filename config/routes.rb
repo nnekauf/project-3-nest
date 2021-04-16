@@ -17,12 +17,13 @@
       resources :books, only: [:index] 
       resources :reviews, only: [:index, :new, :create, :patch, :put, :edit] #must fix new review route
     end
+    patch  "/readers/:id/reviews", to: "reviews#update"
 
     resources :books, only: [:index, :show] do 
       resources :reviews, only: [:index, :new, :create] 
     end
 
-    resources :reviews, only: [:show]
+    resources :reviews, only: [:show, :patch]
   
     
   #fix scope to only show items that the current_user owns
