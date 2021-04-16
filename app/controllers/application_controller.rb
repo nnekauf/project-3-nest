@@ -28,12 +28,12 @@ class ApplicationController < ActionController::Base
         Object.const_get(params["controller"].titlecase.singularize)
     end
 
-    def check_reader(obj)
-        obj.id == current_user
+    def check_reader(reader)
+        reader.id == current_user.id
     end
   
-    def redirect_if_not_reader(obj)
-        if !check_reader(obj)
+    def redirect_if_not_reader(reader)
+        if !check_reader(reader)
           flash[:message] = "Sorry, this is not your review!"
           redirect_to "/home"
         end
