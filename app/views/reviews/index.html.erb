@@ -2,7 +2,7 @@
 <h2> Here are the reviews that you have written:</h2>
 
 <% @reviews.each do |r| %>
-    <li>"<%= r.text%>" <strong> <%=link_to "- #{r.book.title}", book_path(r.book.id) %></li>
+    <li><strong>"<%= r.text%>"</strong>  <%=link_to "- #{r.book.title}", book_path(r.book.id) %></li> <br>
     
     <%end%>
 
