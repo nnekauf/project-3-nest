@@ -1,0 +1,11 @@
+
+<%=render(partial: "application/errors", locals: {errors: @review.errors.full_messages})%>
+
+<h3>Editing review for <%=@review.book.name%></h3>
+
+<%= form_for(@review) do |f|%>
+  <%=f.label "Edit your Review here!"%>
+  <%=f.text_area :text%>
+  
+  <%=f.submit("Save")%>
+<%end%>
