@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
     def index
       
         if params[:reader_id]
+            
             reader = Reader.find_by(id: params[:reader_id])
             @reviews = reader.reviews
         elsif params[:book_id]

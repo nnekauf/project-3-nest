@@ -1,10 +1,10 @@
 module ReviewsHelper
 
-    def check_owner(obj)
-        obj.reader == current_user
+    def check_reader(obj)
+        obj.id == current_user
       end
   
-      def redirect_if_not_owner(obj)
+      def redirect_if_not_reader(obj)
         if !check_owner(obj)
           flash[:message] = "Sorry, this is not your review!"
           redirect "/home"
