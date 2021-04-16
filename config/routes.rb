@@ -12,7 +12,9 @@
     get "/auth/facebook/callback", to: "sessions#create_with_fb"
 
     resources :readers
-    resources :books
+    resources :books do 
+      resources :reviews
+    end
 
     resources :reviews
   #   resources :readers, except: [:new, :create] do #readers have books
