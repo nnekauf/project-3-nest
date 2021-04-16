@@ -19,8 +19,8 @@
   #   # resources :plots
     # get '/home', to: "readers#home"
     get '/', to: "readers#welcome"
-  #   get '/signup', to: "readers#new", as: "signup"
-  #   post '/signup', to: "readers#create"
+    get '/signup', to: "readers#new", as: "signup"
+    post '/signup', to: "readers#create"
     # get '/login', to: "sessions#new", as: "login"
     # post '/login', to: "sessions#create"
   #   post '/logout', to: "sessions#destroy"
