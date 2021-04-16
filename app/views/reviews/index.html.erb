@@ -1,10 +1,14 @@
 <br><br>
+<% if params[:reader_id] %>
 <h2> Here are the reviews that you have written:</h2>
+<% else%>
+<h2> Here are the reviews for <%= @book.title %>:</h2>
+<%end%>
 
 <% @reviews.each do |r| %>
-    <li><strong>"<%= r.text%>"</strong>  <%=link_to "- #{r.book.title}", book_path(r.book.id) %> <%=link_to "Edit this Review", edit_reader_review_path(current_user, r.id) %></li> <br>
+    <li><strong>"<%= r.text%>"</strong>   <% if params[:reader_id]%> <%=link_to "- #{r.book.title}", book_path(r.book.id) %> <%= link_to "Edit this Review", edit_reader_review_path(current_user, r.id)%> <% else%> <%=r.reader.username%> <%end%>   </li> <br>
     
     <%end%>
 
     <br><br>
-    <%=link_to "Write a New Review", new_reader_review_path(current_user) %>
+    <% if params[:reader_id]%> <%=link_to "Write a New Review", new_reader_review_path(current_user) %> <%end%>
