@@ -38,6 +38,8 @@ class ReviewsController < ApplicationController
     end
 
     def edit
+        @review = Review.find_by(id: params[:id])
+        # binding.pry
         if @review.reader != current_user
             flash[:message] = "That is not your review!"
             redirect_to '/reviews'
