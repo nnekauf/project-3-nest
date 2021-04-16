@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
     end
 
     def require_login
-        ((flash[:message] = "You must be logged in to do that") && (redirect_to '/login')) if !current_user
+        ((flash[:message] = "You must be logged in to do that") && (redirect_to '/login')) if !logged_in?
     end
     
     
