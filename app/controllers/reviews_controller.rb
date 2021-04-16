@@ -27,4 +27,12 @@ class ReviewsController < ApplicationController
     def destroy
 
     end
+
+    def review_params
+        params.require(:review).permit(:text, :book_id, :reader_id, :id)
+      end
+
+    def set_review
+    @review = Review.find_by(id: params[:id])
+    end
 end
