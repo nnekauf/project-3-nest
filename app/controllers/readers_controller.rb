@@ -1,12 +1,12 @@
 class ReadersController < ApplicationController
-    # before_action(:require_login, except: [:new, :create])
+    before_action(:require_login, except: [:new, :create, :welcome])
 
     def welcome
        
     end
     
     def home
-     
+      
     end
 
     def index
