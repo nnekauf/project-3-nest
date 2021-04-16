@@ -5,6 +5,9 @@ class ReadersController < ApplicationController
        
     end
     
+    def home
+       
+    end
 
     def index
         @readers = Reader.all
