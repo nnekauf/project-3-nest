@@ -1,0 +1,16 @@
+
+<h1>Write a Review!</h1>
+
+<%=render(partial: "application/errors", locals: {errors: @errors})%>
+
+<%= form_for(@review, url: reader_reviews_path(current_user) )  do |f| %>
+<%=f.label "What do you think?"%> <br>
+<%=f.text_area :text %> <br> <br>
+
+<%=f.label "For which book?"%>
+<%=f.collection_select(:book_id, @books, :id, :title) %>
+
+
+<%=f.submit "Write a Review!"%>
+
+<%end%>

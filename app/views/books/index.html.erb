@@ -1,16 +1,18 @@
 
-<h3>Search By Title</h3>
+<h3>Search Books By Title</h3>
 <%= form_with url: books_path, method: :get do |f| %>
   <%=f.text_field :title %>
   <%=f. submit"Search"%>
 <%end%><br>
 
 <%if @reader%>
-<h1><%=@reader.username %>'s page</h1>
+<h1><%=@reader.username %>'s Bookshelf</h1>
 <%end%>
 
 <h1>Books!</h1>
 
-<%@books.each do |book|%>
-    <li><%=link_to(book.title, book_path(book))%></li>
+<%@books.uniq.each do |book|%>
+    <li><%=link_to(book.title, book_path(book))%> - <%=link_to "Review(s)", book_reviews_path(book.id)%> : "<%= book.reviews.first.text.truncate_words(4)%>"</li><br>
   <%end%>
+
+

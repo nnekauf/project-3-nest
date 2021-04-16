@@ -1,24 +1,6 @@
 class Book < ApplicationRecord
-    belongs_to :reader 
-    belongs_to :author  
+    has_many :reviews
+    has_many :readers, through: :reviews
 
-    validates_presence_of :title 
-    validates_presence_of :author 
-
-    
-scope(:title_search, ->(title) { self.where("title like ?", "%#{title}%") })
-
-    def books_attributes=(attrs)
-        attrs.values.each do |hash|
-          if hash[:id]
-            g = Book.find_by(id: hash[:id])
-            g.update(hash)
-          else
-            self.books.build(hash)
-          end
-        end
-    end
-
-    
-
+    scope(:title_search, ->(title) { self.where("title like ?", "%#{title}%") })
 end

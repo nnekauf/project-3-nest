@@ -22,3 +22,6 @@
      display: inline-block;
  }
  
+ @font-face {
+     font-family: 'Courier New', Courier, monospace;
+ }

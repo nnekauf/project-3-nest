@@ -1,18 +1,22 @@
-<h3> Home </h3>
-<%= current_user.username %>
 <br>
+<%= current_user.username %>
+<h3> Home </h3>
+
+<br><br>
 
 
 
 
-
-<h3> You currently have <%= current_user.books.count%> <%=link_to "Book(s)", reader_books_path(current_user) %> on your bookshelf! </h3>
-
-
+<% if current_user.reviews.count > 0 %>
+<h3> You have written <%= current_user.reviews.count%> <%=link_to "Review(s)!", reader_reviews_path(current_user) %> </h3>
+<h3> Click on your <%=link_to "Bookshelf", reader_books_path(current_user) %> to see all of your books.</h3>
+<%else%>
+<h4>You have not written any reviews!</h4>
+<%end%>
   
 
 
 
 
 
-<%=link_to "Add a New Book to your bookshelf!", new_reader_book_path(current_user) %>
+<%=link_to "Write a New Review!", new_reader_review_path(current_user) %>

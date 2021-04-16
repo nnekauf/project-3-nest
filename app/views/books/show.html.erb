@@ -1,13 +1,13 @@
-<h1><%=@book.title%></h1>
+<h1>Title: <%=@book.title%></h1>
+<h1>Author: <%=@book.author%></h1>
 
 
 
-<h2>Story line:</h2>
+<h2>Reviews:</h2>
+<% @book.reviews.each do |r| %>
+    <li> <%= r.reader.username %> says: "<i><%=r.text.truncate_words(6)%>"</i> <%= link_to "more...", review_path(r.id) %><br><br></li>
+    <%end%>
+    
 
-    <h3><%=@book.storyline%></h3>
-    <h3><%=@book.review%></h3>
-
-<br>
-<%=link_to "Author", author_path(@book.author_id) %><br><br>
 
 

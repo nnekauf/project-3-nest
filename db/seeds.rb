@@ -7,8 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Reader.create([{ username: 'DeniseReads', email: 'denisereadsexample@gmail.com', password: 'password' }, {username: 'sallyreads', email: 'sallyreadsexample@gmail.com', password: 'password'  }, { username: 'CharlieReads', email: 'charliereadsexample@gmail.com', password: 'password'  }])
 
-Author.create([{bio: "My passion is creating amazing gardening books to cultivate an inspiring nation!", full_name: "Misses Greenthumb"}, { bio: "My finances have changed ever since I leanred to value of owning my own!", full_name: "Mr. Money"}, {bio: "Love rules all in my opinion. When I stooped and realized that I had to spread love, I was enlightened.", full_name: "Dr. Love"}])
 
 
 
-Book.create([{title: "Gardening 101", storyline: "Get your geens, beans, potatoes, and tomatoes here!", reader_id: 1, author_id: 1}, {title: "Self-Made 101", storyline: "Get to the money, that bag.", reader_id: 2, author_id: 2}, {title: "Romance 101", storyline: "Love is so amazing", reader_id: 3, author_id: 3}])
+Book.create([{title: "Gardening 101", author: "Misses Greenthumb"}, {title: "Self-Made 101", author: "Mr. Money"}, {title: "Romance 101", author: "Dr. Love"}])
+
+Review.create([{text: "This book delivers amazing gardening tips to cultivate and inspire clean eating!", book_id: 1, reader_id: 1}, { text: "My finances have changed ever since I leanred to value of owning my own!", book_id: 2, reader_id: 2}, {text: "Love rules all in my opinion. When I stooped and realized that I had to spread love, I was enlightened.", book_id: 3, reader_id: 3}])

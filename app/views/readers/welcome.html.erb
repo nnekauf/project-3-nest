@@ -1,0 +1,11 @@
+<h1> Nest.</h1>
+
+<h2>Document your experiences through your reading journey.</h2>
+
+
+<% if !logged_in?%>
+    <%= link_to "Log In", login_path %><br><br>
+    <%= link_to "Sign Up", signup_path %>
+    <% else%>
+    <%= link_to "Home", home_path %>
+<%end%>

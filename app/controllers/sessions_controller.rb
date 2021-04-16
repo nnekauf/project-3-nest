@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
         end
         if reader.save
           session[:reader_id] = reader.id
-          redirect_to reader_books_path(reader)
+          redirect_to "/home"
         else
           redirect_to signup_path
         end
