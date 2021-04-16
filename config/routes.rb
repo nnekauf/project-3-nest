@@ -1,6 +1,6 @@
 
   Rails.application.routes.draw do
-    get '/', to: "readers#welcome"
+    get '/', to: "readers#welcome" #all good
 
     get '/signup', to: "readers#new", as: "signup"
     post '/signup', to: "readers#create"
