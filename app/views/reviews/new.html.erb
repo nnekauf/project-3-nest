@@ -1,7 +1,7 @@
 
 <h1>Write a Review!</h1>
 
-<%=render(partial: "application/errors", locals: {errors: @errors})%>
+<%=render(partial: "application/errors", locals: {errors: @review.errors.full_messages})%>
 
 <%= form_for(@review, url: reader_reviews_path(current_user) )  do |f| %>
 <%=f.label "What do you think?"%> <br>

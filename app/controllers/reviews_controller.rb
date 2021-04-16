@@ -2,7 +2,9 @@ class ReviewsController < ApplicationController
     def index
       
         if params[:reader_id]
+            
             reader = Reader.find_by(id: params[:reader_id])
+            redirect_if_not_reader(reader)
             @reviews = reader.reviews
         elsif params[:book_id]
                 @book = Book.find_by(id: params[:book_id])
@@ -18,6 +20,8 @@ class ReviewsController < ApplicationController
     end
 
     def new
+        reader = Reader.find_by(id: params[:reader_id])
+        redirect_if_not_reader(reader)
         @review = Review.new
         @books = Book.all
     end
@@ -41,6 +45,9 @@ class ReviewsController < ApplicationController
     end
 
     def edit
+        reader = Reader.find_by(id: params[:reader_id])
+        redirect_if_not_reader(reader)
+        
         @review = Review.find_by(id: params[:id])
         # binding.pry
         if @review.reader != current_user
