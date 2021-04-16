@@ -45,6 +45,9 @@ class ReviewsController < ApplicationController
     end
 
     def edit
+        reader = Reader.find_by(id: params[:reader_id])
+        redirect_if_not_reader(reader)
+        
         @review = Review.find_by(id: params[:id])
         # binding.pry
         if @review.reader != current_user
