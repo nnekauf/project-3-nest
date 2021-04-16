@@ -6,7 +6,7 @@ class ReadersController < ApplicationController
     end
     
     def home
-       
+     binding.pry  
     end
 
     def index
