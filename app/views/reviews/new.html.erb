@@ -1,0 +1,17 @@
+
+<h1>Write a Review!</h1>
+
+<%=render(partial: "application/errors", locals: {errors: @errors})%>
+
+<%= form_for @review do |f| %>
+<%=f.label "What do you think?"%>
+
+<%=f.label "book"%>
+<%=f.collection_select(:book_id, @books, :id, :title) %>
+
+
+<%=f.submit "Write a Review!"%>
+
+<%end%>
+
+<%=link_to "Write a Review! With Facebook", '/auth/facebook'%>

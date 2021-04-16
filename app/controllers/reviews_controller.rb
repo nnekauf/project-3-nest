@@ -8,7 +8,8 @@ class ReviewsController < ApplicationController
     end
 
     def new
-
+        @review = Review.new
+        @books = Book.all
     end
 
     def create
