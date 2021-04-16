@@ -4,7 +4,7 @@ class ReadersController < ApplicationController
     end
 
     def new
-
+        @reader = Reader.find_by(id: params[:id])
     end
 
     def create
