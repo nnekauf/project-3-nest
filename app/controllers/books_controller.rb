@@ -1,6 +1,5 @@
 class BooksController < ApplicationController
 
-    layout 'application'
 
     def index
       
