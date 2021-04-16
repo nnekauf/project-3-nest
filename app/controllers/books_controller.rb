@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+
+    layout 'application'
+    
     def index
       
         # if params[:title]
