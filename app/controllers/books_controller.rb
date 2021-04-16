@@ -21,7 +21,7 @@ class BooksController < ApplicationController
     def show
         @book = Book.find_by(id: params[:id])
         
-        binding.pry
+        # binding.pry
     end
 
 end
