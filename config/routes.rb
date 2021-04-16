@@ -1,29 +1,29 @@
 
   Rails.application.routes.draw do
-    get '/', to: "readers#welcome" #all good
+    get '/', to: "readers#welcome" 
 
-    get '/signup', to: "readers#new", as: "signup" #all good
+    get '/signup', to: "readers#new", as: "signup" 
     post '/signup', to: "readers#create"
 
-    get '/login', to: "sessions#new", as: "login" #all good
+    get '/login', to: "sessions#new", as: "login" 
     post '/login', to: "sessions#create"
-    post '/logout', to: "sessions#destroy" #all good
+    post '/logout', to: "sessions#destroy" 
 
-    get "/auth/facebook/callback", to: "sessions#create_with_fb" #all good
+    get "/auth/facebook/callback", to: "sessions#create_with_fb" 
 
-    get '/home', to: "readers#home" #all good
+    get '/home', to: "readers#home" 
 
-    resources :readers, except: [:show, :index, :new, :create, :destroy, :patch, :put, :edit]  do #all good
-      resources :books, only: [:index] #all good
-      resources :reviews, only: [:index, :new, :create, :patch, :put, :edit] #allgood
+    resources :readers, except: [:show, :index, :new, :create, :destroy, :patch, :put, :edit]  do 
+      resources :books, only: [:index] 
+      resources :reviews, only: [:index, :new, :create, :patch, :put, :edit] 
     end
     patch  "/reviews/:id", to: "reviews#update"
 
-    resources :books, only: [:index, :show] do #all good
+    resources :books, only: [:index, :show] do 
       resources :reviews, only: [:index] 
     end
 
-    resources :reviews, only: [:show, :patch]
+    resources :reviews, only: [:show, :patch] 
   
     
   #fix scope to only show items that the current_user owns
