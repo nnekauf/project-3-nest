@@ -4,6 +4,9 @@ class ReviewsController < ApplicationController
         if params[:reader_id]
             reader = Reader.find_by(id: params[:reader_id])
             @reviews = reader.reviews
+        elsif params[:book_id]
+                book = Book.find_by(id: params[:book_id])
+                @reviews = book.reviews
         else
             @reviews = Review.all
         end

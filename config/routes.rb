@@ -19,8 +19,8 @@
     end
     patch  "/reviews/:id", to: "reviews#update"
 
-    resources :books, only: [:index, :show] do #working on this
-      resources :reviews, only: [:index, :new, :create] 
+    resources :books, only: [:index, :show] do #all good
+      resources :reviews, only: [:index] 
     end
 
     resources :reviews, only: [:show, :patch]
