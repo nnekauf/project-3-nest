@@ -8,6 +8,9 @@ class BooksController < ApplicationController
         elsif params[:reader_id] #if we are nested reader/:id/books
           @reader = Reader.find_by(id: params[:reader_id])
           @books = @reader.books
+        #   @books.each do |b|
+        #     @review = Review.find_by(id: book.id).text 
+        #   end
         # elsif params[:author_id] #if we are nested review/id/books
         #   author = Author.find_by(id: params[:author_id])
         #   @books = author.books

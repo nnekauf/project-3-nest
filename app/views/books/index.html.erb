@@ -11,6 +11,6 @@
 
 <h1>Books!</h1>
 
-<%@books.each do |book|%>
-    <li><%=link_to(book.title, book_path(book))%></li>
+<%@books.uniq.each do |book|%>
+    <li><%=link_to(book.title, book_path(book))%> - Review(s): "<%= book.reviews.first.text.truncate_words(4)%>"</li><br>
   <%end%>
