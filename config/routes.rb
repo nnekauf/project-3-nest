@@ -11,11 +11,11 @@
 
     get "/auth/facebook/callback", to: "sessions#create_with_fb" #all good
 
-    get '/home', to: "readers#home" #working on it
+    get '/home', to: "readers#home" #all good
 
     resources :readers, except: [:show, :index, :new, :create, :destroy, :patch, :put, :edit]  do
       resources :books, only: [:index] 
-      resources :reviews, only: [:index, :new, :create, :patch, :put, :edit] 
+      resources :reviews, only: [:index, :new, :create, :patch, :put, :edit] #must fix new review route
     end
 
     resources :books, only: [:index, :show] do 

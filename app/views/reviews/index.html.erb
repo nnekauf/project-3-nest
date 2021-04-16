@@ -1,6 +1,10 @@
-
-<h2> Check out the Reviews!</h2>
+<br><br>
+<h2> Here are the reviews that you have written:</h2>
 
 <% @reviews.each do |r| %>
-    <li><%= r.text%></li>
+    <li>"<%= r.text%>" <strong> <%=link_to "- #{r.book.title}", book_path(r.book.id) %></li>
+    
     <%end%>
+
+    <br><br>
+    <%=link_to "Write a New Review", new_reader_review_path(current_user) %>
