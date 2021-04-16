@@ -20,6 +20,8 @@ class ReviewsController < ApplicationController
     end
 
     def new
+        reader = Reader.find_by(id: params[:reader_id])
+        redirect_if_not_reader(reader)
         @review = Review.new
         @books = Book.all
     end

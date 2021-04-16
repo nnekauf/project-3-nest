@@ -7,6 +7,8 @@ class BooksController < ApplicationController
           @books = Book.title_search(params[:title].to_s)
         elsif params[:reader_id] #if we are nested reader/:id/books
           @reader = Reader.find_by(id: params[:reader_id])
+          
+            redirect_if_not_reader(@reader)
           @books = @reader.books
         #   @books.each do |b|
         #     @review = Review.find_by(id: book.id).text 
