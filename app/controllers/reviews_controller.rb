@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
         if params[:reader_id]
             
             reader = Reader.find_by(id: params[:reader_id])
+            redirect_if_not_reader(reader)
             @reviews = reader.reviews
         elsif params[:book_id]
                 @book = Book.find_by(id: params[:book_id])
