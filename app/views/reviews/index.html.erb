@@ -2,7 +2,7 @@
 <h2> Here are the reviews that you have written:</h2>
 
 <% @reviews.each do |r| %>
-    <li><strong>"<%= r.text%>"</strong>  <%=link_to "- #{r.book.title}", book_path(r.book.id) %></li> <br>
+    <li><strong>"<%= r.text%>"</strong>  <%=link_to "- #{r.book.title}", book_path(r.book.id) %> <%=link_to "Edit this Review", edit_reader_review_path(current_user, r.id) %></li> <br>
     
     <%end%>
 

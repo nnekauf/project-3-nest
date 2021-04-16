@@ -1,12 +1,12 @@
 
-<h3>Search By Title</h3>
+<h3>Search Books By Title</h3>
 <%= form_with url: books_path, method: :get do |f| %>
   <%=f.text_field :title %>
   <%=f. submit"Search"%>
 <%end%><br>
 
 <%if @reader%>
-<h1><%=@reader.username %>'s page</h1>
+<h1><%=@reader.username %>'s Bookshelf</h1>
 <%end%>
 
 <h1>Books!</h1>
