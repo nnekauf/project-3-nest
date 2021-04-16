@@ -13,13 +13,13 @@
 
     get '/home', to: "readers#home" #all good
 
-    resources :readers, except: [:show, :index, :new, :create, :destroy, :patch, :put, :edit]  do
-      resources :books, only: [:index] 
-      resources :reviews, only: [:index, :new, :create, :patch, :put, :edit] #must fix new review route
+    resources :readers, except: [:show, :index, :new, :create, :destroy, :patch, :put, :edit]  do #all good
+      resources :books, only: [:index] #all good
+      resources :reviews, only: [:index, :new, :create, :patch, :put, :edit] #allgood
     end
     patch  "/reviews/:id", to: "reviews#update"
 
-    resources :books, only: [:index, :show] do 
+    resources :books, only: [:index, :show] do #working on this
       resources :reviews, only: [:index, :new, :create] 
     end
 
