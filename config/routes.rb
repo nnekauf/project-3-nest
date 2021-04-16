@@ -13,8 +13,8 @@
 
     resources :readers
     resources :books
-    
-  # resources :reviews
+
+    resources :reviews
   #   resources :readers, except: [:new, :create] do #readers have books
   #     resources :books
   #   end
