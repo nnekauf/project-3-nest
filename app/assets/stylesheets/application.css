@@ -20,6 +20,7 @@
  
 * {
     background-color: aliceblue;
+    font-family: 'Handlee', cursive;
 }
 .username {
     font-weight: bolder;
@@ -30,6 +31,6 @@
      display: inline-block;
  }
  
- @font-face {
-     font-family: 'Courier New', Courier, monospace;
- }
+ /* @font-face {
+     font-family: Verdana, Geneva, Tahoma, sans-serif
+ } */
