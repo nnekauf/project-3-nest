@@ -18,10 +18,35 @@
      border-color:  red;
  }
  
+* {
+    background-color: aliceblue;
+    font-family: 'Handlee', cursive;
+    text-align: center;
+    font-size: 1.2em;
+}
+.username {
+    font-weight: bolder;
+    background-color: whitesmoke;
+    color: pink;
+    text-shadow: 2px 2px saddlebrown;
+    
+    
+}
+a {
+    text-decoration: none;
+    color:sienna
+}
+
+
+a:hover {
+    color: saddlebrown;
+    text-shadow: 2px 2px pink;
+
+}
  div {
      display: inline-block;
  }
  
- @font-face {
-     font-family: 'Courier New', Courier, monospace;
- }
+ /* @font-face {
+     font-family: Verdana, Geneva, Tahoma, sans-serif
+ } */

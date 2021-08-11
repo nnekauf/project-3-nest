@@ -4,7 +4,7 @@ class BooksController < ApplicationController
     def index
       
         if params[:title]  #if we search by title
-          @books = Book.title_search(params[:title].to_s)
+          @books = Book.title_search(params[:title])
         elsif params[:reader_id] #if we are nested reader/:id/books
           @reader = Reader.find_by(id: params[:reader_id])
           
