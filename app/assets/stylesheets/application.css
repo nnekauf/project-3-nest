@@ -21,6 +21,8 @@
 * {
     background-color: aliceblue;
     font-family: 'Handlee', cursive;
+    align-content: center;
+    font-size: 1.2em;
 }
 .username {
     font-weight: bolder;
