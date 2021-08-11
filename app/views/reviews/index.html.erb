@@ -6,7 +6,7 @@
 <%end%>
 
 <% @reviews.each do |r| %>
-    <li><strong>"<%= r.text%>"</strong>   <% if params[:reader_id]%> <%=link_to "- #{r.book.title}", book_path(r.book.id) %> <%= link_to "Edit this Review", edit_reader_review_path(current_user, r.id)%> <% else%> <%=r.reader.username%> <%end%>   </li> <br>
+    <li><strong>"<%= r.text%>"</strong>   <% if params[:reader_id]%> <%=link_to "- #{r.book.title}", book_path(r.book.id) %> <%= link_to "Edit this Review", edit_reader_review_path(current_user, r.id)%> <% else%> <span class ="username"> <%=r.reader.username%></span> <%end%>   </li> <br>
     
     <%end%>
 

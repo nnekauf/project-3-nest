@@ -5,7 +5,7 @@
 
 <h2>Reviews:</h2>
 <% @book.reviews.each do |r| %>
-    <li> <%= r.reader.username %> says: "<i><%=r.text.truncate_words(6)%>"</i> <%= link_to "more...", review_path(r.id) %><br><br></li>
+    <li> <span class = "username"><%= r.reader.username %></span> says: "<i><%=r.text.truncate_words(6)%>"</i> <%= link_to "more...", review_path(r.id) %><br><br></li>
     <%end%>
     
 
