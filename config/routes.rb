@@ -1,5 +1,6 @@
 
   Rails.application.routes.draw do
+  resources :genres
     get '/', to: "readers#welcome" 
 
     get '/signup', to: "readers#new", as: "signup" 
@@ -25,7 +26,10 @@
 
     resources :reviews, only: [:show, :patch] 
   
-    
+    resources :genres, only: [:index] do
+      resources :books, only: [:index]
+    end
+
   #fix scope to only show items that the current_user owns
     # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   end

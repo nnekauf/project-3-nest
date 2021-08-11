@@ -18,6 +18,9 @@
      border-color:  red;
  }
  
+* {
+    background-color: aliceblue;
+}
  div {
      display: inline-block;
  }
