@@ -21,6 +21,11 @@
 * {
     background-color: aliceblue;
 }
+.username {
+    font-weight: bolder;
+    background-color: whitesmoke;
+    
+}
  div {
      display: inline-block;
  }
